@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-family: Arial;
+}
+
+.container {
+  border: 1px solid red;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.container:hover .cuadrado{ /* se lee asi: cuando le haga hover al container quiero que mi cuadrado se rote y etc etc */
+  animation-play-state: paused; /*con esto hago que se pause la animacion, con running hago que corra en caso de estar pausada en una primera instancia*/
+}
+
+.cuadrado {
+  width: 150px;
+  height: 150px;
+  background-color: #7dc900;
+  margin: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: cuadrado; /*nombre de la animacion*/
+  animation-duration: 2s;/*tiempo que quiero que dure la animacion*/
+  animation-iteration-count: infinite; /*cantidad de veces que quiero que se repita mi animacion*/
+  animation-timing-function: ease;
+  animation-direction: alternate;
+  border-radius: 50%;
+  position: relative;
+}
+
+@keyframes cuadrado {
+  0% { /*se lee: en el instante de tiempo cero quiero que tenga opacidad (en este caso)*/
+    left: 0;
+  }
+  100% { /*se lee: en el último instante de tiempo quiero que no tenga opacidad*/
+    left: calc(100% - 230px);
+  }
+
+}

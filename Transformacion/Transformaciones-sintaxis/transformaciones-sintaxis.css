@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.pelota {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* background-color: red; */
+  /* transition-property: width, height;
+  transition-duration: 10000ms;
+  transition-delay: 10000ms; son 10 milisegundos que espero cuando hago el hover
+  transition-timing-function: ease; */
+  transition: 1s;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.pelota.a {
+  background: red;
+  left: 0;
+}
+
+.pelota.b {
+  background: blue;
+  right: 0;
+}
+
+.canasta {
+  border: 2px solid red;
+  position: relative;
+  height: 100px;
+  border-radius: 5px;
+  width: 100%;
+  transform: rotate(5deg) skew(10deg) translate(100px) scale(1); /*podemos rotar un elemento rotate(ndeg) siendo n el numero, sesgar un elemento skew(ndeg), cambiarla la posicion a un elemento translate(nX, nY) y tambien podemos cambiar el tamaño scale(n) siendo n un numero entre 0 y 1, donde 1 es el 100% y 0 el 0%*/
+}
+
+.canasta:hover .pelota.a {
+  left: calc(50% - 100px);
+}
+
+.canasta:hover .pelota.b {
+  right: calc(50% - 100px);
+}

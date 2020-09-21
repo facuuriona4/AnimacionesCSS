@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-family: Arial;
+}
+
+.container {
+  border: 1px solid red;
+  border-radius: 5px;
+}
+
+.container:hover .cuadrado{ /* se lee asi: cuando le haga hover al container quiero que mi cuadrado se rote y etc etc */
+   transform: scale(.5);
+   transition-duration: 300ms;
+}
+
+.cuadrado {
+  width: 150px;
+  height: 150px;
+  background-color: #7dc900;
+  margin: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
